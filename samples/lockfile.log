@@ -1,0 +1,5 @@
+Synthetic npm fixture
+npm error code EUSAGE
+npm error npm ci requires package.json and package-lock.json to be in sync
+npm error Missing: synthetic-package@1.0.0 from lock file
+##[error]Process completed with exit code 1.

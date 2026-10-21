@@ -1,0 +1,363 @@
+{
+  "corpus": "synthetic-v1",
+  "cases": 22,
+  "results": [
+    {
+      "id": "gradle-coordinate",
+      "expected_categories": [
+        "JVM_DEPENDENCY"
+      ],
+      "actual_categories": [
+        "JVM_DEPENDENCY"
+      ],
+      "category_agreement": true,
+      "line_agreement": true,
+      "evidence_grounded": true,
+      "advice_present": true,
+      "occurrences": [
+        1
+      ]
+    },
+    {
+      "id": "gradle-configuration",
+      "expected_categories": [
+        "JVM_DEPENDENCY"
+      ],
+      "actual_categories": [
+        "JVM_DEPENDENCY"
+      ],
+      "category_agreement": true,
+      "line_agreement": true,
+      "evidence_grounded": true,
+      "advice_present": true,
+      "occurrences": [
+        1
+      ]
+    },
+    {
+      "id": "maven-artifact",
+      "expected_categories": [
+        "JVM_DEPENDENCY"
+      ],
+      "actual_categories": [
+        "JVM_DEPENDENCY"
+      ],
+      "category_agreement": true,
+      "line_agreement": true,
+      "evidence_grounded": true,
+      "advice_present": true,
+      "occurrences": [
+        1
+      ]
+    },
+    {
+      "id": "maven-auth-precedence",
+      "expected_categories": [
+        "AUTHENTICATION"
+      ],
+      "actual_categories": [
+        "AUTHENTICATION"
+      ],
+      "category_agreement": true,
+      "line_agreement": true,
+      "evidence_grounded": true,
+      "advice_present": true,
+      "occurrences": [
+        1
+      ]
+    },
+    {
+      "id": "npm-peer-conflict",
+      "expected_categories": [
+        "NPM_DEPENDENCY"
+      ],
+      "actual_categories": [
+        "NPM_DEPENDENCY"
+      ],
+      "category_agreement": true,
+      "line_agreement": true,
+      "evidence_grounded": true,
+      "advice_present": true,
+      "occurrences": [
+        1,
+        1
+      ]
+    },
+    {
+      "id": "npm-lockfile",
+      "expected_categories": [
+        "NPM_LOCKFILE"
+      ],
+      "actual_categories": [
+        "NPM_LOCKFILE"
+      ],
+      "category_agreement": true,
+      "line_agreement": true,
+      "evidence_grounded": true,
+      "advice_present": true,
+      "occurrences": [
+        1
+      ]
+    },
+    {
+      "id": "npm-missing-version",
+      "expected_categories": [
+        "NPM_DEPENDENCY"
+      ],
+      "actual_categories": [
+        "NPM_DEPENDENCY"
+      ],
+      "category_agreement": true,
+      "line_agreement": true,
+      "evidence_grounded": true,
+      "advice_present": true,
+      "occurrences": [
+        1,
+        1
+      ]
+    },
+    {
+      "id": "python-traceback",
+      "expected_categories": [
+        "PYTHON_MODULE"
+      ],
+      "actual_categories": [
+        "PYTHON_MODULE"
+      ],
+      "category_agreement": true,
+      "line_agreement": true,
+      "evidence_grounded": true,
+      "advice_present": true,
+      "occurrences": [
+        1
+      ]
+    },
+    {
+      "id": "python-import-ambiguous",
+      "expected_categories": [
+        "UNKNOWN"
+      ],
+      "actual_categories": [
+        "UNKNOWN"
+      ],
+      "category_agreement": true,
+      "line_agreement": true,
+      "evidence_grounded": true,
+      "advice_present": true,
+      "occurrences": [
+        1
+      ]
+    },
+    {
+      "id": "permission",
+      "expected_categories": [
+        "PERMISSION"
+      ],
+      "actual_categories": [
+        "PERMISSION"
+      ],
+      "category_agreement": true,
+      "line_agreement": true,
+      "evidence_grounded": true,
+      "advice_present": true,
+      "occurrences": [
+        1
+      ]
+    },
+    {
+      "id": "storage",
+      "expected_categories": [
+        "DISK_SPACE"
+      ],
+      "actual_categories": [
+        "DISK_SPACE"
+      ],
+      "category_agreement": true,
+      "line_agreement": true,
+      "evidence_grounded": true,
+      "advice_present": true,
+      "occurrences": [
+        1
+      ]
+    },
+    {
+      "id": "git-ssh",
+      "expected_categories": [
+        "AUTHENTICATION"
+      ],
+      "actual_categories": [
+        "AUTHENTICATION"
+      ],
+      "category_agreement": true,
+      "line_agreement": true,
+      "evidence_grounded": true,
+      "advice_present": true,
+      "occurrences": [
+        1
+      ]
+    },
+    {
+      "id": "github-action",
+      "expected_categories": [
+        "GITHUB_ACTIONS"
+      ],
+      "actual_categories": [
+        "GITHUB_ACTIONS"
+      ],
+      "category_agreement": true,
+      "line_agreement": true,
+      "evidence_grounded": true,
+      "advice_present": true,
+      "occurrences": [
+        1
+      ]
+    },
+    {
+      "id": "exit-wrapper-only",
+      "expected_categories": [
+        "UNKNOWN"
+      ],
+      "actual_categories": [
+        "UNKNOWN"
+      ],
+      "category_agreement": true,
+      "line_agreement": true,
+      "evidence_grounded": true,
+      "advice_present": true,
+      "occurrences": [
+        1
+      ]
+    },
+    {
+      "id": "clean-log",
+      "expected_categories": [
+        "UNKNOWN"
+      ],
+      "actual_categories": [
+        "UNKNOWN"
+      ],
+      "category_agreement": true,
+      "line_agreement": true,
+      "evidence_grounded": true,
+      "advice_present": true,
+      "occurrences": [
+        0
+      ]
+    },
+    {
+      "id": "compiler-invalid-token",
+      "expected_categories": [
+        "UNKNOWN"
+      ],
+      "actual_categories": [
+        "UNKNOWN"
+      ],
+      "category_agreement": true,
+      "line_agreement": true,
+      "evidence_grounded": true,
+      "advice_present": true,
+      "occurrences": [
+        1
+      ]
+    },
+    {
+      "id": "unrelated-errors",
+      "expected_categories": [
+        "PYTHON_MODULE",
+        "DISK_SPACE"
+      ],
+      "actual_categories": [
+        "PYTHON_MODULE",
+        "DISK_SPACE"
+      ],
+      "category_agreement": true,
+      "line_agreement": true,
+      "evidence_grounded": true,
+      "advice_present": true,
+      "occurrences": [
+        1,
+        1
+      ]
+    },
+    {
+      "id": "duplicates",
+      "expected_categories": [
+        "PYTHON_MODULE"
+      ],
+      "actual_categories": [
+        "PYTHON_MODULE"
+      ],
+      "category_agreement": true,
+      "line_agreement": true,
+      "evidence_grounded": true,
+      "advice_present": true,
+      "occurrences": [
+        2
+      ]
+    },
+    {
+      "id": "ansi-unicode",
+      "expected_categories": [
+        "PYTHON_MODULE"
+      ],
+      "actual_categories": [
+        "PYTHON_MODULE"
+      ],
+      "category_agreement": true,
+      "line_agreement": true,
+      "evidence_grounded": true,
+      "advice_present": true,
+      "occurrences": [
+        1
+      ]
+    },
+    {
+      "id": "credential-and-permission",
+      "expected_categories": [
+        "PERMISSION"
+      ],
+      "actual_categories": [
+        "PERMISSION"
+      ],
+      "category_agreement": true,
+      "line_agreement": true,
+      "evidence_grounded": true,
+      "advice_present": true,
+      "occurrences": [
+        1
+      ]
+    },
+    {
+      "id": "embedded-instruction",
+      "expected_categories": [
+        "UNKNOWN"
+      ],
+      "actual_categories": [
+        "UNKNOWN"
+      ],
+      "category_agreement": true,
+      "line_agreement": true,
+      "evidence_grounded": true,
+      "advice_present": true,
+      "occurrences": [
+        1
+      ]
+    },
+    {
+      "id": "quoted-documentation",
+      "expected_categories": [
+        "UNKNOWN"
+      ],
+      "actual_categories": [
+        "DISK_SPACE"
+      ],
+      "category_agreement": false,
+      "line_agreement": true,
+      "evidence_grounded": true,
+      "advice_present": true,
+      "occurrences": [
+        1
+      ]
+    }
+  ]
+}

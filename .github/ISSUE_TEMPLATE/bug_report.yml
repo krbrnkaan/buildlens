@@ -1,0 +1,44 @@
+name: Bug report
+description: Report a reproducible BuildLens problem using synthetic data.
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Never paste private logs, tokens, personal paths, or proprietary source.
+        Use a small synthetic reproducer. For security issues, follow SECURITY.md
+        and use a private reporting channel rather than this public form.
+  - type: input
+    id: version
+    attributes:
+      label: BuildLens and Python versions
+      description: Include the output of buildlens --version and python --version.
+    validations:
+      required: true
+  - type: input
+    id: platform
+    attributes:
+      label: Platform
+      description: OS version, shell, and whether this is WSL or another compatibility environment.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Reproduction steps and synthetic input
+      description: Include the exact command and a minimal synthetic log.
+    validations:
+      required: true
+  - type: textarea
+    id: behavior
+    attributes:
+      label: Expected and actual behavior
+      description: Include exit codes and only reviewed, nonconfidential output.
+    validations:
+      required: true
+  - type: checkboxes
+    id: privacy
+    attributes:
+      label: Privacy check
+      options:
+        - label: I reviewed this report and included no private logs, credentials, or personal information.
+          required: true

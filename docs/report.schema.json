@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "BuildLens report 1.0",
+  "oneOf": [
+    {
+      "type": "object",
+      "required": ["schema_version", "source", "lines", "warnings", "diagnoses"],
+      "properties": {
+        "schema_version": {"const": "1.0"},
+        "source": {"type": "string"},
+        "lines": {"type": "integer", "minimum": 0},
+        "warnings": {"type": "array", "items": {"type": "string"}},
+        "diagnoses": {
+          "type": "array", "minItems": 1, "maxItems": 100,
+          "items": {"$ref": "#/$defs/diagnosis"}
+        }
+      }
+    },
+    {
+      "type": "object",
+      "required": ["schema_version", "error"],
+      "properties": {"schema_version": {"const": "1.0"}, "error": {"type": "string"}}
+    }
+  ],
+  "$defs": {
+    "diagnosis": {
+      "type": "object",
+      "required": ["category", "rule_id", "fingerprint", "explanation", "next_step", "occurrences", "evidence"],
+      "properties": {
+        "category": {"type": "string"},
+        "rule_id": {"type": "string"},
+        "fingerprint": {"type": "string", "pattern": "^[0-9a-f]{16}$"},
+        "explanation": {"type": "string"},
+        "next_step": {"type": "string"},
+        "occurrences": {"type": "integer", "minimum": 0},
+        "evidence": {"type": "array", "maxItems": 5, "items": {"$ref": "#/$defs/evidence"}}
+      }
+    },
+    "evidence": {
+      "type": "object",
+      "required": ["line", "text"],
+      "properties": {
+        "line": {"type": "integer", "minimum": 1},
+        "text": {"type": "string", "maxLength": 1000}
+      }
+    }
+  }
+}

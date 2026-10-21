@@ -1,0 +1,10 @@
+Synthetic BuildLens fixture - no real project data
+> Task :compileJava FAILED
+Could not find org.example:sample-library:99.0.
+npm error code ERESOLVE
+npm error unable to resolve dependency tree
+ModuleNotFoundError: No module named 'synthetic_example'
+ModuleNotFoundError: No module named 'synthetic_example'
+OSError: [Errno 28] No space left on device
+fatal: Authentication failed for https://example.invalid/synthetic
+##[error]Process completed with exit code 1.

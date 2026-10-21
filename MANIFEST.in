@@ -1,0 +1,7 @@
+include LICENSE CONTRIBUTING.md SECURITY.md AGENTS.md CHANGELOG.md .gitattributes .gitignore
+recursive-include docs *.md
+recursive-include docs *.json
+recursive-include samples *.log *.txt
+recursive-include samples *.json
+recursive-include tools *.py *.sh
+recursive-include .github *.yml *.md

@@ -1,0 +1,4 @@
+Synthetic runner fixture
+Error: EACCES: permission denied, open '/synthetic/output'
+Error: Unable to resolve action example/synthetic-missing@v1
+##[error]Process completed with exit code 1.

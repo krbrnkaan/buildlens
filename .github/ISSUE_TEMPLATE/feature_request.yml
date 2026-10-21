@@ -1,0 +1,20 @@
+name: Feature request
+description: Describe a developer problem BuildLens could solve.
+body:
+  - type: markdown
+    attributes:
+      value: Keep examples synthetic and free of confidential information. BuildLens is an offline CLI.
+  - type: textarea
+    id: problem
+    attributes:
+      label: Developer problem
+      description: What task is difficult, and what happens with BuildLens today?
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Smallest useful improvement
+      description: Describe the expected behavior, alternatives, and a synthetic example if useful.
+    validations:
+      required: true
