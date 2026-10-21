@@ -1,5 +1,11 @@
 # Milestone 2A — private GitHub CI preflight
 
+> Historical approval request, not current execution status. The approved private
+> repository and initial commit were created; all eight hosted jobs passed in
+> run 39667229407. See [the 2A results](milestone-2a-results.md) and
+> [current 2B preflight](milestone-2b-report.md). Unrun/absent-remote statements
+> below describe the state before the approved upload.
+
 Date: 2026-10-21. BuildLens **0.1.0**, report schema **1.0**.
 
 **READY for private upload, subject to explicit approval and the external

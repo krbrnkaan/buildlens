@@ -98,6 +98,9 @@ RULES = (
     ),
 )
 
+# Only an explicit line label establishes example context; quotation alone does not.
+DOCUMENTATION_EXAMPLE = re.compile(r"^\s*Documentation example:\s*", re.I)
+
 GENERIC = re.compile(
     r"(?:##\[error\]|\bProcess completed with exit code [1-9]\d*|"
     r"\bexit (?:code|status)[: ]+[1-9]\d*|\bBUILD (?:FAILED|FAILURE)\b|"

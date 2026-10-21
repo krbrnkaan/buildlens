@@ -1,7 +1,8 @@
 # Security policy
 
-BuildLens 0.1.x is an early CLI. No hosted security reporting channel or remote
-repository has been configured in this preparation. No contact email is specified.
+BuildLens 0.1.x is an early CLI. `krbrnkaan/buildlens` exists as a private GitHub
+repository. GitHub Private Vulnerability Reporting is not yet enabled or verified;
+public launch remains gated on its activation and verification. No contact email is specified.
 There is no guaranteed response time or formal security support commitment.
 
 ## Confidential disclosure
@@ -27,8 +28,24 @@ Vulnerability Reporting**, verify that Security → Report a vulnerability is
 available, and document the actual reporting destination before announcing the
 release. This feature is for public repositories; its availability is not claimed
 during private evaluation. See [GitHub's configuration instructions](https://docs.github.com/en/code-security/security-advisories/working-with-repository-security-advisories/configuring-private-vulnerability-reporting-for-a-repository).
-Enabling it or changing visibility requires separate maintainer approval. Public
-issue forms remain for nonconfidential synthetic reproductions only.
+Enabling it or changing visibility requires separate maintainer approval. After
+approval to make the repository public, the maintainer must enable the feature
+in Settings → Advanced Security (or GitHub's current equivalent), then check the
+public Security → Advisories page and its **Report a vulnerability** form.
+Verify reporter access with a separate eligible GitHub account before
+announcements; do not submit a fake advisory as a test. Record the working
+reporting link in this policy only after that check. The planned destination is
+[the repository Security page](https://github.com/krbrnkaan/buildlens/security),
+not a claim that private reporting is currently available.
+
+For reports received through GitHub, the maintainer acknowledges within the
+private advisory, keeps reproduction and remediation there with explicitly
+agreed participants, and coordinates disclosure timing with the reporter.
+Request synthetic reproductions and minimum necessary details. Never attach
+real credentials or private logs, even to an advisory. No SLA or bounty is
+promised. If private reporting is unavailable, use the verified private channel
+described above or request one without disclosing vulnerability details.
+Public issue forms remain for nonconfidential synthetic reproductions only.
 
 ## Trust boundaries
 

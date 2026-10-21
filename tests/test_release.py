@@ -101,6 +101,45 @@ def test_unknown_import_error_retains_actual_evidence(tmp_path: Path) -> None:
     assert [(e.line, e.text) for e in diagnosis.evidence] == [(2, message)]
 
 
+def test_documentation_example_is_unknown_with_original_evidence(tmp_path: Path) -> None:
+    path = tmp_path / "documentation.log"
+    example = "Documentation example: No space left on device"
+    path.write_text("Starting\n" + example, encoding="utf-8")
+    diagnosis = analyze(path).diagnoses[0]
+    assert diagnosis.category == "UNKNOWN"
+    assert [(e.line, e.text) for e in diagnosis.evidence] == [(2, example)]
+
+
+def test_documentation_example_does_not_hide_following_failure(tmp_path: Path) -> None:
+    path = tmp_path / "mixed.log"
+    path.write_text(
+        "  documentation EXAMPLE: No space left on device\n"
+        "ModuleNotFoundError: No module named 'synthetic'\n",
+        encoding="utf-8",
+    )
+    diagnosis = analyze(path).diagnoses[0]
+    assert diagnosis.category == "PYTHON_MODULE"
+    assert [e.line for e in diagnosis.evidence] == [2]
+
+
+@pytest.mark.parametrize(
+    "message",
+    [
+        'OSError: [Errno 28] "No space left on device"',
+        "Documentation build failed: No space left on device",
+        "Error while copying Documentation example: No space left on device",
+    ],
+)
+def test_operational_errors_still_match_with_quotes_or_documentation_text(
+    tmp_path: Path, message: str
+) -> None:
+    path = tmp_path / "operational.log"
+    path.write_text(message, encoding="utf-8")
+    diagnosis = analyze(path).diagnoses[0]
+    assert diagnosis.category == "DISK_SPACE"
+    assert [(e.line, e.text) for e in diagnosis.evidence] == [(1, message)]
+
+
 def test_recorded_diagnostic_evaluation_is_reproducible() -> None:
     result = subprocess.run(
         [sys.executable, str(ROOT / "tools/evaluate.py")],
@@ -113,3 +152,6 @@ def test_recorded_diagnostic_evaluation_is_reproducible() -> None:
     assert result.returncode == 0, result.stderr
     recorded = json.loads((ROOT / "docs/diagnostic-evaluation.json").read_text(encoding="utf-8"))
     assert json.loads(result.stdout) == recorded
+    assert all(
+        case["category_agreement"] and case["line_agreement"] for case in recorded["results"]
+    )

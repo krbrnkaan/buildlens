@@ -1,5 +1,11 @@
 # Milestone 1.6 — public release preparation
 
+> Historical checkpoint. The private repository and initial commit now exist;
+> all eight initial hosted jobs passed in run 39667229407. The quoted-documentation
+> case is fixed locally in [milestone 2B](milestone-2b-report.md). Statements below
+> about absent remotes, unrun CI and the old false positive describe this earlier
+> checkpoint only, not the current candidate.
+
 Date: 2026-10-21. Candidate: **BuildLens v0.1.0**, JSON schema **1.0**.
 
 **Verdict: NOT READY to publish yet. Local release preparation is complete.**

@@ -1,7 +1,8 @@
 # BuildLens milestone 0–1 report
 
-Historical baseline. The current audit and verification results are in
-[milestone 1.5](milestone-1.5-report.md).
+Historical baseline: statuses below describe that checkpoint only. The private
+repository now exists and all eight initial hosted jobs passed in run 39667229407.
+See [milestone 2B](milestone-2b-report.md) for current results and release gates.
 
 Assessment: **READY for local MVP use and contributor review.** This is not a
 claim of production certification or verified Linux/Python 3.11 runtime behavior.

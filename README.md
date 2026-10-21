@@ -1,7 +1,8 @@
 # BuildLens
 
-Version 0.1.0 release preparation. No public repository release or package
-publication is claimed. See the [draft release notes](docs/releases/v0.1.0.md).
+Version 0.1.0 release preparation. The GitHub repository exists privately;
+no public release or package publication exists. See the
+[draft release notes](docs/releases/v0.1.0.md).
 
 BuildLens is an independent, offline command-line tool that turns a CI/build log
 into a small report of recognizable failures, supporting evidence, and cautious
@@ -121,17 +122,20 @@ python -m build
 
 CI is configured for Windows and Ubuntu with Python 3.11, 3.12, 3.13, and 3.14.
 It builds the wheel, installs it, and tests all formats and exit statuses using
-`python tools/smoke_wheel.py` with isolated Python imports. CI is configured
-locally; it will run only after a future, separately authorized remote setup.
+`python tools/smoke_wheel.py` with isolated Python imports. All eight jobs passed
+on [hosted run 39667229407](https://github.com/krbrnkaan/buildlens/actions/runs/39667229407)
+for commit `7126708`. That run verifies the initial commit, not subsequent edits.
 Tests and samples use synthetic data only.
 
 Locally verified: Windows with Python 3.11, 3.12, 3.13, and 3.14; Ubuntu under WSL
-with Python 3.12. Hosted GitHub Actions, Linux Python 3.11/3.13/3.14, macOS,
-and other unlisted environments remain **UNVERIFIED**. Python below 3.11 is unsupported.
+with Python 3.12. Hosted Ubuntu 24.04.5 and Windows Server 2025 passed with
+Python 3.11–3.14: Ubuntu had 105 tests pass per version; Windows had 101 pass
+and four POSIX-only skips per version. macOS, Ubuntu 26, and other unlisted
+environments remain **UNVERIFIED**. Python below 3.11 is unsupported.
 The WSL checkout's normal filesystem cannot create FIFOs; real FIFO and symlink
 checks also run on a temporary native Linux filesystem mounted privately inside
-the checkout. See [the release preparation report](docs/milestone-1.6-report.md)
-for exact results, skips, and remaining publication gates.
+the checkout. See [the current preflight report](docs/milestone-2b-report.md)
+for local changes, exact verification results, and remaining publication gates.
 
 ## Example output
 
@@ -158,9 +162,9 @@ instructions, and synthetic credentials. Embedded instructions are data only.
 
 `python tools/evaluate.py` evaluates the labelled synthetic cases in
 `samples/evaluation.json`. [Recorded results](docs/diagnostic-evaluation.json)
-include a deliberately ambiguous quoted-documentation example that is currently
-misclassified as a disk-space symptom. This is a known precision limit, not a
-general accuracy benchmark or evidence of adoption by real users.
+cover 22 cases. All expected categories and evidence positions agree after a
+narrow fix for explicitly labelled `Documentation example:` lines. This small
+synthetic corpus is not a general accuracy benchmark or evidence of adoption by real users.
 
 The evaluator checks original evidence positions, UNKNOWN cases, duplicate and
 unrelated errors, and the presence of advice. Advice remains an investigation
@@ -196,8 +200,13 @@ suggestion; the evaluator cannot prove root causes or measure real developer use
 `models` defines the report; `render` formats it; `cli` owns arguments and exit
 codes. All runtime code is under `src/buildlens`.
 
-Rules primarily recognize English, line-oriented messages. Quoted example errors
-can match; multiline-only signatures, custom tools, locale-specific errors, and
+Rules primarily recognize English, line-oriented messages. A line beginning with
+`Documentation example:` (ignoring case and leading whitespace) is treated as
+example text and retained as UNKNOWN evidence if no supported error is found.
+This is a literal label convention, not semantic understanding: unlabelled or
+timestamp-prefixed examples can still match, and a real error under that exact
+label can be missed. Quotation alone never suppresses an error. Multiline-only
+signatures, custom tools, locale-specific errors, and
 obfuscated failures can be missed. No dependency graph, repository inspection,
 network verification, or execution occurs. Recommendations require human review.
 Redaction is best effort: review reports before sharing, as paths, usernames,

@@ -7,7 +7,7 @@ from pathlib import Path
 from buildlens.models import Diagnosis, Evidence, Report
 from buildlens.reader import read_log
 from buildlens.redaction import redact
-from buildlens.rules import GENERIC, RULES
+from buildlens.rules import DOCUMENTATION_EXAMPLE, GENERIC, RULES
 
 MAX_GROUPS = 100
 MAX_EVIDENCE = 5
@@ -36,9 +36,12 @@ def analyze(path: Path) -> Report:
     generic_count = 0
     omitted = False
     for number, line in enumerate(lines, 1):
-        matched = next((rule for rule in RULES if rule.pattern.search(line)), None)
+        example = DOCUMENTATION_EXAMPLE.match(line)
+        matched = (
+            None if example else next((rule for rule in RULES if rule.pattern.search(line)), None)
+        )
         if matched is None:
-            if generic_match := GENERIC.search(line):
+            if generic_match := example or GENERIC.search(line):
                 generic_count += 1
                 if len(generic) < MAX_EVIDENCE:
                     generic.append(Evidence(number, excerpt(line, generic_match)))

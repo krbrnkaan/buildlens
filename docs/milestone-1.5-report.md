@@ -1,5 +1,9 @@
 # Milestone 1.5 — independent MVP hardening
 
+> Historical checkpoint, not current compatibility or remote status. The private
+> repository now exists and all eight initial hosted jobs passed in run 39667229407.
+> See [milestone 2B](milestone-2b-report.md) for current changes and release gates.
+
 Date: 2026-10-21. Scope: the actual BuildLens implementation in this workspace,
 not just the previous report. No other local project was inspected or reused.
 

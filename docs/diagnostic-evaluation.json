@@ -349,9 +349,9 @@
         "UNKNOWN"
       ],
       "actual_categories": [
-        "DISK_SPACE"
+        "UNKNOWN"
       ],
-      "category_agreement": false,
+      "category_agreement": true,
       "line_agreement": true,
       "evidence_grounded": true,
       "advice_present": true,
