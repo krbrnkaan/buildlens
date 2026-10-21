@@ -1,15 +1,19 @@
 # Security policy
 
-BuildLens 0.1.x is an early CLI. `krbrnkaan/buildlens` exists as a private GitHub
-repository. GitHub Private Vulnerability Reporting is not yet enabled or verified;
-public launch remains gated on its activation and verification. No contact email is specified.
+BuildLens 0.1.x is an early CLI. `krbrnkaan/buildlens` is public and GitHub Private
+Vulnerability Reporting is enabled. Its public entry point was checked on
+2026-10-22; reporting-form access from an eligible non-maintainer account remains
+**UNVERIFIED**, so the release gate is not cleared. No contact email is specified.
 There is no guaranteed response time or formal security support commitment.
 
 ## Confidential disclosure
 
-During local/private CI evaluation, contact the maintainer through the existing,
-verified private conversation in which you obtained access. If you have no such
-channel, ask the maintainer for one before sending vulnerability details. Do not
+Use GitHub's [Report a vulnerability](https://github.com/krbrnkaan/buildlens/security/advisories/new)
+link from the [Security page](https://github.com/krbrnkaan/buildlens/security).
+GitHub sign-in is required. The entry point is visible publicly; independent
+non-maintainer form access is not yet verified. If reporting is unavailable,
+contact the maintainer through an existing verified private conversation, or ask
+for a private channel before sending vulnerability details. Do not
 use a public issue, pull request, CI log, or an unsolicited attachment as a private
 report. Access to a private repository does not make an issue confidential from
 its other collaborators.
@@ -23,20 +27,13 @@ its other collaborators.
 3. Share additional sensitive details only after agreeing on the private channel
    and its recipients. Redaction alone is not permission to share a private log.
 
-When the repository becomes public, the maintainer **must enable GitHub Private
-Vulnerability Reporting**, verify that Security → Report a vulnerability is
-available, and document the actual reporting destination before announcing the
-release. This feature is for public repositories; its availability is not claimed
-during private evaluation. See [GitHub's configuration instructions](https://docs.github.com/en/code-security/security-advisories/working-with-repository-security-advisories/configuring-private-vulnerability-reporting-for-a-repository).
-Enabling it or changing visibility requires separate maintainer approval. After
-approval to make the repository public, the maintainer must enable the feature
-in Settings → Advanced Security (or GitHub's current equivalent), then check the
-public Security → Advisories page and its **Report a vulnerability** form.
-Verify reporter access with a separate eligible GitHub account before
-announcements; do not submit a fake advisory as a test. Record the working
-reporting link in this policy only after that check. The planned destination is
-[the repository Security page](https://github.com/krbrnkaan/buildlens/security),
-not a claim that private reporting is currently available.
+The maintainer enabled PVR after the approved public visibility change and
+verified the public reporting link. The available signed-in account was the
+repository owner, which opens the maintainer's draft-advisory form and cannot
+verify researcher access. Before any announcement or release, verify the
+reporting form with a separate eligible account that has no owner/maintainer
+role. Do not submit a fake report or advisory as a test. See
+[GitHub's configuration instructions](https://docs.github.com/en/code-security/security-advisories/working-with-repository-security-advisories/configuring-private-vulnerability-reporting-for-a-repository).
 
 For reports received through GitHub, the maintainer acknowledges within the
 private advisory, keeps reproduction and remediation there with explicitly
