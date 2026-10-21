@@ -1,62 +1,58 @@
-# v0.1.0 publication checklist
+# Release verification procedure
 
-This checklist is not authorization to commit, push, change visibility, publish
-a release, upload packages, or change external settings.
+This procedure does not authorize publication by itself. Release execution must
+stay within the maintainer's explicit approval; package registry publication is
+separate. Record actual completion evidence on the GitHub Release and in the
+local release report. Do not mark an unrun check as passing.
 
-## Established evidence
+## Established v0.1.0 prerequisites
 
-- [x] Maintainer confirmed ownership/control of rights and intent to use MIT.
-- [x] Preserve MIT text and project copyright; no invented contributor identities.
-- [x] Package/CLI version 0.1.0; JSON schema 1.0; no runtime dependencies.
-- [x] Private repository `krbrnkaan/buildlens` and initial 45-file root commit exist.
-- [x] Initial commit `7126708` passed all eight hosted Ubuntu/Windows × Python
-      3.11/3.12/3.13/3.14 jobs in run 39667229407, first attempt.
-- [x] Reviewed the local milestone 2A results report for proposed public inclusion:
-      commit/job identifiers, synthetic test results and aggregate usage only;
-      no credentials, payment details or private local paths.
-- [x] Reproduce and fix the explicit documentation-example false positive with
-      regression tests, without suppressing ordinary quoted errors.
-- [x] Verify official Node.js 24 action replacement tags, full commit SHAs,
-      declared runtime, licensing, runner minimum and read-only permission needs.
+- The maintainer confirmed control of rights and MIT intent. Preserve the MIT
+  text and copyright notice; this is not independent legal provenance verification.
+- Package/CLI version is 0.1.0; JSON schema is 1.0; runtime dependencies are empty.
+- The maintainer approved public exposure of the reviewed Git history, no-reply
+  identity, historical account/billing summaries and existing Actions logs.
+- The repository is public and GitHub Private Vulnerability Reporting is enabled.
+  On 2026-10-22 the maintainer independently confirmed form access from a separate
+  account with no repository maintainer/admin role. No fake report was submitted.
+- The maintainer authorized the final necessary documentation commit/push,
+  all eight CI jobs, tag v0.1.0, a GitHub Release and exactly three uploaded
+  assets: reviewed wheel, source archive and SHA-256 checksum file. No PyPI upload.
 
-## Before an approved private push
+## Execute before publishing
 
-- [ ] Review the exact final file list/diff, including both new milestone reports,
-      source, tests, evaluation output, documentation, and workflow pins.
-- [x] Complete and review the final local tests, lint, format, build, archive
-      inspection and isolated wheel checks recorded in milestone 2B.
-- [ ] Obtain explicit approval for the reviewed commit/push and repository Actions
-      allowlist update. No broad ref pushes, tags, tooling snapshots or ignored files.
-- [ ] Verify the repository is still private and sufficient included allowance
-      remains with the $0 Actions budget intact; do not enable paid usage.
-- [ ] Replace the external action allowlist with the two exact reviewed new SHAs
-      before pushing the changed workflow; preserve read-only token and other restrictions.
-- [ ] Run all eight hosted jobs on the exact candidate commit; inspect every
-      failure, skip and warning. The old passing run does not validate these edits.
-- [ ] Record the new run URL, SHA, results and usage without claiming unrun checks.
-      Review and approve any further documentation commit/push; verify its final
-      commit as well. Do not silently add a post-CI change to the release tag.
+1. Review and explicitly stage only necessary release documentation. Exclude
+   local ledgers/reports, private logs, snapshots, `.git`, environments and caches.
+   Review added content for accidental private data and preserve best-effort
+   redaction and unverified macOS/Ubuntu 26 limitations.
+2. Confirm public visibility, enabled PVR and the exact reporting link in
+   SECURITY.md. Keep confidential receipt/reproduction/disclosure coordination;
+   no invented email, SLA or bounty. Stop if the security gate fails.
+3. Verify sufficient included Actions allowance and the existing $0 spending
+   guard; do not enable paid usage or alter billing. Preserve reviewed full-SHA
+   actions, read-only token permissions and the current matrix/timeouts.
+4. Commit and push the reviewed file set only. Run all eight Ubuntu/Windows ×
+   Python 3.11/3.12/3.13/3.14 jobs on that exact final commit. Inspect every job,
+   test count, skip, warning and package check; stop on validation failure.
+5. Export only that verified commit into a clean directory inside BuildLens.
+   Build wheel/sdist there, inspect all archive members and metadata/license/
+   source bytes, and verify isolated wheel installation. Compare source archive
+   contents against the exported commit, allowing generated packaging metadata.
+   Recursive docs manifests must not collect untracked local reports.
+6. Calculate SHA-256 for the final wheel and source archive; create
+   `SHA256SUMS.txt` containing only those two filenames/digests. Freeze these
+   exact bytes; no rebuild or file edit after hashing without revalidation.
+7. Confirm tag v0.1.0 resolves to the CI-verified commit, not a later main tip.
+   Do not use a mirror push or publish local tooling refs. Record the exact SHA
+   and final CI URL in the release body.
+8. Publish the approved GitHub Release with only the reviewed wheel, sdist and
+   checksum file. Verify public state, tag target, asset names/sizes and downloaded
+   bytes/digests. GitHub's automatic source-code links are separate from the three
+   uploaded assets and are not the built sdist.
+9. Record the release URL, tag/SHA, actual CI outcomes, digests, asset inventory,
+   observed billing status and remaining limitations in the local release report.
+   Stop; no additional feature work or registry publication is authorized.
 
-## Before public visibility and announcement
-
-- [ ] Obtain separate explicit approval for making the existing repository public,
-      enabling private vulnerability reporting, creating tag `v0.1.0`, and the
-      intended GitHub release assets. Package registry publication is separate.
-- [ ] Review all reachable release history, author identity, file contents and
-      exact wheel/sdist; compare the release tag to the verified commit.
-- [ ] After the approved public visibility change, enable GitHub Private
-      Vulnerability Reporting in Settings → Advanced Security. Verify the
-      Security → Advisories → Report a vulnerability link and form, including
-      access from an eligible non-maintainer account, before announcements.
-      Do not submit a fake security advisory. If unavailable, stop the launch
-      and arrange a verified confidential channel; do not imply PVR is enabled.
-- [ ] Document the verified reporting destination and coordinate private receipt,
-      reproduction, fix and disclosure with reporters. No invented email, SLA or bounty.
-- [ ] Keep macOS/Ubuntu 26 UNVERIFIED and redaction best effort in release messaging.
-- [ ] With explicit approval, create the exact tag and GitHub release, attaching
-      only the reviewed wheel/sdist and their SHA-256 digests. Do not upload the
-      checkout, `.git`, environments, tooling snapshots or private input logs.
-
-Historical reports describe their original checkpoints. See milestone 2B for
-the current preflight and remaining gates. Ownership confirmation is not an
-independent legal/provenance audit; synthetic agreement is not real-world accuracy.
+If a required check fails, stop without publishing. Do not repair a failed final
+candidate with an unverified post-CI change. Any revised candidate needs review
+and a fresh exact-commit CI run.

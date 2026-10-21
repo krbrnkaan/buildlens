@@ -1,8 +1,9 @@
 # BuildLens
 
-Version 0.1.0 release preparation. The GitHub repository exists privately;
-no public release or package publication exists. See the
-[draft release notes](docs/releases/v0.1.0.md).
+Version 0.1.0. See the [GitHub Release](https://github.com/krbrnkaan/buildlens/releases/tag/v0.1.0)
+for the wheel, source distribution, SHA-256 checksums and final CI evidence, and
+the [release notes](docs/releases/v0.1.0.md) for supported features and limitations.
+No PyPI publication is provided.
 
 BuildLens is an independent, offline command-line tool that turns a CI/build log
 into a small report of recognizable failures, supporting evidence, and cautious
@@ -17,7 +18,21 @@ symptom, not a proven root cause. An unsupported or inconclusive log returns
 
 ## Install
 
-Requires Python 3.11 or newer. From the project directory:
+Requires Python 3.11 or newer. For runtime-only installation, download the wheel
+and `SHA256SUMS.txt` from the GitHub Release, verify the wheel's SHA-256 against
+that file, and install inside a virtual environment:
+
+```sh
+python -m pip install --no-index --no-deps buildlens-0.1.0-py3-none-any.whl
+python -m buildlens --help
+```
+
+Use `Get-FileHash -Algorithm SHA256 <file>` in PowerShell or `sha256sum <file>`
+on Linux to calculate a digest. Compare the full value. The checksum detects
+changed bytes; it is not an independently signed provenance guarantee.
+
+For development, obtain the source distribution or clone the public repository.
+From the project directory:
 
 Windows PowerShell (use the Python launcher rather than an older `python`):
 
@@ -123,19 +138,23 @@ python -m build
 CI is configured for Windows and Ubuntu with Python 3.11, 3.12, 3.13, and 3.14.
 It builds the wheel, installs it, and tests all formats and exit statuses using
 `python tools/smoke_wheel.py` with isolated Python imports. All eight jobs passed
-on [hosted run 39667229407](https://github.com/krbrnkaan/buildlens/actions/runs/39667229407)
-for commit `7126708`. That run verifies the initial commit, not subsequent edits.
+on [hosted run 39681710304](https://github.com/krbrnkaan/buildlens/actions/runs/39681710304)
+for the pre-release policy commit `b395b58`. Publication also requires a fresh
+eight-job run on the exact final release commit; its URL and SHA are recorded
+on the GitHub Release. Earlier runs do not validate subsequent edits.
 Tests and samples use synthetic data only.
 
 Locally verified: Windows with Python 3.11, 3.12, 3.13, and 3.14; Ubuntu under WSL
 with Python 3.12. Hosted Ubuntu 24.04.5 and Windows Server 2025 passed with
-Python 3.11–3.14: Ubuntu had 105 tests pass per version; Windows had 101 pass
+Python 3.11–3.14: Ubuntu had 110 tests pass per version; Windows had 106 pass
 and four POSIX-only skips per version. macOS, Ubuntu 26, and other unlisted
 environments remain **UNVERIFIED**. Python below 3.11 is unsupported.
 The WSL checkout's normal filesystem cannot create FIFOs; real FIFO and symlink
 checks also run on a temporary native Linux filesystem mounted privately inside
-the checkout. See [the current preflight report](docs/milestone-2b-report.md)
-for local changes, exact verification results, and remaining publication gates.
+the checkout. Earlier milestone reports are historical checkpoints; current
+release evidence is recorded on the GitHub Release. Confidential issues should
+use [GitHub Private Vulnerability Reporting](https://github.com/krbrnkaan/buildlens/security/advisories/new),
+as described in [SECURITY.md](SECURITY.md).
 
 ## Example output
 

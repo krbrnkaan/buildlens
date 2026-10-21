@@ -2,16 +2,18 @@
 
 BuildLens 0.1.x is an early CLI. `krbrnkaan/buildlens` is public and GitHub Private
 Vulnerability Reporting is enabled. Its public entry point was checked on
-2026-10-22; reporting-form access from an eligible non-maintainer account remains
-**UNVERIFIED**, so the release gate is not cleared. No contact email is specified.
+2026-10-22. The maintainer independently confirmed that the reporting form opens
+under a separate account with no repository maintainer or administrative
+permissions. No fake report was submitted. No contact email is specified.
 There is no guaranteed response time or formal security support commitment.
 
 ## Confidential disclosure
 
 Use GitHub's [Report a vulnerability](https://github.com/krbrnkaan/buildlens/security/advisories/new)
 link from the [Security page](https://github.com/krbrnkaan/buildlens/security).
-GitHub sign-in is required. The entry point is visible publicly; independent
-non-maintainer form access is not yet verified. If reporting is unavailable,
+GitHub sign-in is required. The entry point is visible publicly, and independent
+non-maintainer form access was confirmed by the maintainer on 2026-10-22.
+If reporting is unavailable,
 contact the maintainer through an existing verified private conversation, or ask
 for a private channel before sending vulnerability details. Do not
 use a public issue, pull request, CI log, or an unsolicited attachment as a private
@@ -27,12 +29,11 @@ its other collaborators.
 3. Share additional sensitive details only after agreeing on the private channel
    and its recipients. Redaction alone is not permission to share a private log.
 
-The maintainer enabled PVR after the approved public visibility change and
-verified the public reporting link. The available signed-in account was the
-repository owner, which opens the maintainer's draft-advisory form and cannot
-verify researcher access. Before any announcement or release, verify the
-reporting form with a separate eligible account that has no owner/maintainer
-role. Do not submit a fake report or advisory as a test. See
+The maintainer enabled PVR after the approved public visibility change. The
+initial owner-account check was not considered independent verification; the
+subsequent separate-account check above completed that gate. Recheck the channel
+if repository access or reporting settings change. Do not submit a fake report
+or advisory as a test. See
 [GitHub's configuration instructions](https://docs.github.com/en/code-security/security-advisories/working-with-repository-security-advisories/configuring-private-vulnerability-reporting-for-a-repository).
 
 For reports received through GitHub, the maintainer acknowledges within the

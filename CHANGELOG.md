@@ -1,8 +1,8 @@
 # Changelog
 
-## 0.1.0 — Unreleased
+## 0.1.0 — 2026-10-22
 
-First release candidate. No GitHub release or package publication has occurred.
+First official GitHub release. No PyPI publication.
 
 - Offline CLI for `.log` and `.txt` build logs, with terminal, JSON, and Markdown reports.
 - Explicit signatures for Gradle/Maven, npm, Python missing modules, permissions,
@@ -19,7 +19,9 @@ now remain UNKNOWN evidence instead of creating actionable diagnoses; quotations
 without this label can still match. All 22 labelled synthetic evaluation cases
 agree on categories and evidence lines; this is not real-world accuracy.
 
-The initial private commit passed all eight hosted Ubuntu/Windows × Python
-3.11–3.14 jobs in run 39667229407. Local preflight updates the two official action
-pins to Node.js 24 revisions; the modified source and workflow still require a
-new hosted run. See SECURITY.md and docs/milestone-2b-report.md.
+Official actions use reviewed full-SHA Node.js 24 pins and read-only token
+permissions. Pre-release hosted validation passed on Ubuntu/Windows × Python
+3.11–3.14; the GitHub Release records the exact final commit and its CI run.
+macOS and Ubuntu 26 remain unverified. GitHub Private Vulnerability Reporting
+is enabled, with independent non-maintainer access confirmed by the maintainer.
+See SECURITY.md for confidential disclosure and best-effort redaction limits.

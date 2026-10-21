@@ -28,7 +28,8 @@ general accuracy benchmark. On Linux, `sh tools/check_linux_fifo.sh` checks
 real special files when unprivileged mount namespaces are available. It creates
 a temporary filesystem only inside the checkout and does not install system software.
 
-Hosted run 39667229407 passed the initial Ubuntu/Windows × Python 3.11–3.14
-matrix. Source or workflow changes require a fresh matrix on the exact proposed
+Hosted run 39681710304 passed the pre-release Ubuntu/Windows × Python 3.11–3.14
+matrix (110 Ubuntu passes; 106 Windows passes and four POSIX skips per version).
+Every release requires a fresh matrix on the exact proposed
 release commit. macOS and Ubuntu 26 remain unverified. Follow the publication
 checklist; local validation does not authorize a commit, push, or public release.
